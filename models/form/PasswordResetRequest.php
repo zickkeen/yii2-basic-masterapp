@@ -59,14 +59,12 @@ class PasswordResetRequest extends Model
         $resetLink = Yii::$app->urlManager->createAbsoluteUrl(['user/reset-password', 'token' => $user->verification_token]);
  
         return Yii::$app->mailer
-            ->compose(
-                ['htmlLayout' => 'passwordResetToken-html', 'textLayout' => 'passwordResetToken-text'],
-                ['user' => $user]
+            ->compose('layouts/passwordResetToken-html',['user' => $user]
             )
             ->setFrom([Yii::$app->params['noreplyEmail'] => Yii::$app->name . ' robot'])
             ->setTo($this->email)
-            ->setSubject('Password reset for ' . Yii::$app->name)
-            ->setTextBody('For Reset link: ' . $resetLink)
+            ->setSubject('Konfirmasi reset password ' . $user->username . '(' .$user->email. ') | ' . Yii::$app->name)
+            //->setTextBody('For Reset link: ' . $resetLink)
             ->send();
     }
  

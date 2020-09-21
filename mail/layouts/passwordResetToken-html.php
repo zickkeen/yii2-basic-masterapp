@@ -2,7 +2,7 @@
  
 use yii\helpers\Html;
  
-$resetLink = Yii::$app->urlManager->createAbsoluteUrl(['site/reset-password', 'token' => $user->password_reset_token]);
+$resetLink = Yii::$app->urlManager->createAbsoluteUrl(['user/reset-password', 'token' => $user->verification_token]);
 
 /* @var $this \yii\web\View view component instance */
 /* @var $message \yii\mail\MessageInterface the message being composed */
@@ -24,11 +24,14 @@ $resetLink = Yii::$app->urlManager->createAbsoluteUrl(['site/reset-password', 't
 <body>
     <?php $this->beginBody() ?>
     <div class="password-reset">
-	    <p>Hello <?= Html::encode($user->username) ?>,</p>
-	    <p>Follow the link below to reset your password:</p>
+	    <p>Hai <?= Html::encode($user->username) ?>,</p>
+	    <p>Kami menerima permintaan reset password dari email ini. Jika anda merasa melakukan permintaan reset password, silahkan klik link di bawah ini:</p>
+        
 	    <p><?= Html::a(Html::encode($resetLink), $resetLink) ?></p>
+
+        <p>Jika anda tidak merasa melakukan permintaan reset password tersebut, silahkan abaikan email ini.</p>
 	</div>
-    <div class="footer">With kind regards, <?= Yii::$app->name ?> team</div>
+    <div class="footer">Hormat kami, </br><b><?= Yii::$app->name ?></b> team</div>
     <?php $this->endBody() ?>
 </body>
 </html>

@@ -1,19 +1,7 @@
 <?php
 
 $cfg = require_once __DIR__ . '/config.php';
-
-$db = [
-    'class' => 'yii\db\Connection',
-    'dsn' => $cfg['db']['type'].':host='.$cfg['db']['host'].';dbname='.$cfg['db']['name'],
-    'username' => $cfg['db']['user'],
-    'password' => $cfg['db']['pass'],
-    'charset' => 'utf8',
-
-    // Schema cache options (for production environment)
-    //'enableSchemaCache' => true,
-    //'schemaCacheDuration' => 60,
-    //'schemaCache' => 'cache',
-];
+$db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'basic',
@@ -81,7 +69,7 @@ $config = [
     'params' => $cfg['params'],
 ];
 
-if (YII_ENV_DEV) {
+if (YII_ENV) {
     // configuration adjustments for 'dev' environment
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [

@@ -11,7 +11,7 @@ use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
 AppAsset::register($this);
-
+//$this->title = Yii::$app->name;
 $config = Yii::$app->params['app'];
 ?>
 <?php $this->beginPage() ?>
@@ -49,7 +49,7 @@ $config = Yii::$app->params['app'];
         ['label' => 'About', 'url' => ['/site/about']],
         ['label' => 'Contact', 'url' => ['/site/contact']],
         Yii::$app->user->isGuest ? 
-            ['label' => 'Admin', 'items' => [
+            ['label' => 'Login/Signup', 'items' => [
                 ['label' => 'Signup', 'url' => ['/user/signup']],
                 ['label' => 'Login', 'url' => ['/user/login']],
             ]]
@@ -104,7 +104,7 @@ $config = Yii::$app->params['app'];
     <div class="container">
         <p class="pull-left">&copy; <a href="<?=$config['urlCompany']?>"><?=$config['company'] ?></a> <?= date('Y') ?></p>
 
-        <p class="pull-right">Powered by <a href="https://bojez.com">Bojez Creative</a></p>
+        <p class="pull-right">Powered by <a href="https://github.com/zickkeen/yii2-basic-masterapp">Zick Keen</a> & <a href='https://github.com/yiisoft/yii2-app-basic'>Yiisoft</a></p>
     </div>
 </footer>
 

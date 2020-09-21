@@ -1,12 +1,12 @@
 <?php
 
-$config = require_once __DIR__ . '/config.php';
+$cfg = require __DIR__ . '/config.php';
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host='.$config['mysql']['host'].';dbname='.$config['mysql']['name'],
-    'username' => $config['mysql']['user'],
-    'password' => $config['mysql']['pass'],
+    'dsn' => $cfg['db']['type'].':host='.$cfg['db']['host'].';dbname='.$cfg['db']['name'],
+    'username' => $cfg['db']['user'],
+    'password' => $cfg['db']['pass'],
     'charset' => 'utf8',
 
     // Schema cache options (for production environment)

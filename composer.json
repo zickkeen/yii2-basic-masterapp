@@ -1,16 +1,16 @@
 {
-    "name": "yiisoft/yii2-app-basic",
-    "description": "Yii 2 Basic Project Template",
-    "keywords": ["yii2", "framework", "basic", "project template"],
-    "homepage": "http://www.yiiframework.com/",
+    "name": "zickkeen/yii2-basic-masterapp",
+    "description": "Yii 2 Basic {Modified Template}",
+    "keywords": ["yii2", "framework", "basic", "starter template"],
+    "homepage": "http://www.github.com/zickkeen/yii2-basic-masterapp/",
     "type": "project",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
-        "forum": "http://www.yiiframework.com/forum/",
-        "wiki": "http://www.yiiframework.com/wiki/",
+        "issues": "https://github.com/zickkeen/yii2-basic-masterapp/issues?state=open",
+        "forum": "https://github.com/zickkeen/yii2-basic-masterapp/forum/",
+        "wiki": "https://github.com/zickkeen/yii2-basic-masterapp/wiki/",
         "irc": "irc://irc.freenode.net/yii",
-        "source": "https://github.com/yiisoft/yii2"
+        "source": "https://github.com/zickkeen/yii2-basic-masterapp"
     },
     "minimum-stability": "stable",
     "require": {
@@ -22,7 +22,7 @@
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
         "yiisoft/yii2-gii": "~2.1.0",
-        "yiisoft/yii2-faker": "~2.0.0",
+        "yiisoft/yii2-faker": "*",
         "codeception/codeception": "^4.0",
         "codeception/verify": "~0.5.0 || ~1.1.0",
         "codeception/specify": "~0.4.6",
@@ -30,7 +30,8 @@
         "codeception/module-filesystem": "^1.0.0",
         "codeception/module-yii2": "^1.0.0",
         "codeception/module-asserts": "^1.0.0",
-        "insolita/yii2-migration-generator": "~2.3"
+        "insolita/yii2-migration-generator": "~2.3",
+        "codeception/module-webdriver": "^1.1"
     },
     "config": {
         "process-timeout": 1800,
